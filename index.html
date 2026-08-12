@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="romantic">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love! ❤️ | Romantic Celebration</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for romantic icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Heart Fireworks & Rose Petals Canvas -->
+  <canvas id="fireworksCanvas"></canvas>
+  <div id="heartParticleContainer"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-heart logo-iconPulse"></i>
+      <span class="logo-text">Bday<span class="highlight">Love</span></span>
+    </div>
+    
+    <div class="nav-controls">
+
+
+      <!-- Personalize Modal Trigger -->
+      <button id="openPersonalizeModal" class="nav-btn accent-btn" title="Customize Love Story">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>Personalize</span>
+      </button>
+
+      <!-- Share Link -->
+      <button id="shareLinkBtn" class="nav-btn icon-only" title="Share Romantic Link">
+        <i class="fa-solid fa-heart-circle-plus"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main class="main-container">
+    
+    <!-- Hero Banner -->
+    <section class="hero-section">
+      <div class="badge-pill">
+        <span class="sparkle">🌹</span> Dedicated to My Gorgeous Queen <span class="sparkle">🌹</span>
+      </div>
+
+      <h1 class="hero-title">
+        Happy Birthday, <span id="recipientNameDisplay" class="gradient-text">Vyshu</span>! 💖
+      </h1>
+
+      <p id="subGreetingDisplay" class="hero-subtitle">
+        You bring endless sunshine, magic, warmth, and love into my life every single day! ✨
+      </p>
+
+      <!-- Milestone Badge / Link to Cutie Page -->
+      <a href="cutie.html" id="milestoneBadge" class="milestone-tag clickable-tag" title="Click to play special game!">
+        <i class="fa-solid fa-heart"></i> <span id="milestoneText">My Cutie piggy 🐷💖</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <!-- Interactive Red Velvet Heart Birthday Cake -->
+      <div class="cake-experience-container">
+        <div class="cake-wrapper">
+          <div class="cake-plate"></div>
+          
+          <div class="cake">
+            <div class="cake-layer layer-bottom">
+              <div class="heart-drip"></div>
+              <div class="heart-drip"></div>
+            </div>
+            <div class="cake-layer layer-middle">
+              <div class="heart-drip"></div>
+            </div>
+            <div class="cake-layer layer-top">
+              <div class="heart-drip"></div>
+            </div>
+            
+            <div class="candles-container" id="candlesContainer">
+              <div class="candle" data-lit="true">
+                <div class="flame heart-flame">
+                  <div class="flame-inner"></div>
+                </div>
+                <div class="smoke"></div>
+              </div>
+              <div class="candle" data-lit="true">
+                <div class="flame heart-flame">
+                  <div class="flame-inner"></div>
+                </div>
+                <div class="smoke"></div>
+              </div>
+              <div class="candle" data-lit="true">
+                <div class="flame heart-flame">
+                  <div class="flame-inner"></div>
+                </div>
+                <div class="smoke"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-actions">
+          <button id="blowCandlesBtn" class="primary-btn glow-effect">
+            <i class="fa-solid fa-wind"></i> Blow Candles & Wish
+          </button>
+          <button id="relightCandlesBtn" class="secondary-btn hidden">
+            <i class="fa-solid fa-fire"></i> Relight Candles
+          </button>
+        </div>
+      </div>
+
+      <!-- Wax-Sealed Romantic Love Letter Envelope -->
+      <div class="envelope-section">
+        <div class="envelope-wrapper" id="envelopeWrapper">
+          <div class="envelope-back"></div>
+          <div class="letter-paper" id="letterPaper">
+            <div class="letter-stamp">💌 FOR MY LOVE</div>
+            <h3 class="letter-heading">Dearest <span class="letter-name">Vyshu</span>,</h3>
+            <p id="loveLetterBody" class="letter-text">
+              From the moment you entered my life, everything became brighter, sweeter, and infinitely more meaningful. Happy Birthday my princess!
+            </p>
+            <div class="letter-signature">
+              Forever Yours,<br>
+              <strong id="senderNameDisplay" class="gradient-text">Your Prince</strong>
+            </div>
+          </div>
+          <div class="wax-seal" id="waxSeal">
+            <i class="fa-solid fa-heart"></i>
+            <span>OPEN ME</span>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-top" id="envelopeTop"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Reasons Why I Love You" 3D Flip Card Deck -->
+    <section class="reasons-section section-padding">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-heart-pulse text-accent"></i> Reasons Why I Love You</h2>
+        <p class="section-desc">Click each card to flip and reveal a special reason why you mean the world to me!</p>
+      </div>
+
+      <div class="reasons-grid">
+        <!-- Card 1 -->
+        <div class="reason-card-container">
+          <div class="reason-card">
+            <div class="card-front glass-panel">
+              <span class="card-number">01</span>
+              <i class="fa-solid fa-face-smile-beam card-icon"></i>
+              <h4>Reason #1</h4>
+              <p class="flip-prompt">Click to flip ❤️</p>
+            </div>
+            <div class="card-back glass-panel">
+              <i class="fa-solid fa-heart"></i>
+              <p>"Your infectious smile that instantly brightens up even my darkest days."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reason-card-container">
+          <div class="reason-card">
+            <div class="card-front glass-panel">
+              <span class="card-number">02</span>
+              <i class="fa-solid fa-hand-holding-heart card-icon"></i>
+              <h4>Reason #2</h4>
+              <p class="flip-prompt">Click to flip ❤️</p>
+            </div>
+            <div class="card-back glass-panel">
+              <i class="fa-solid fa-heart"></i>
+              <p>"How genuinely kind, caring, and thoughtful you are to everyone."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reason-card-container">
+          <div class="reason-card">
+            <div class="card-front glass-panel">
+              <span class="card-number">03</span>
+              <i class="fa-solid fa-moon card-icon"></i>
+              <h4>Reason #3</h4>
+              <p class="flip-prompt">Click to flip ❤️</p>
+            </div>
+            <div class="card-back glass-panel">
+              <i class="fa-solid fa-heart"></i>
+              <p>"Our late-night heart-to-heart conversations & silly jokes together."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="reason-card-container">
+          <div class="reason-card">
+            <div class="card-front glass-panel">
+              <span class="card-number">04</span>
+              <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
+              <h4>Reason #4</h4>
+              <p class="flip-prompt">Click to flip ❤️</p>
+            </div>
+            <div class="card-back glass-panel">
+              <i class="fa-solid fa-heart"></i>
+              <p>"The magical sparkle in your eyes whenever you get excited about something!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="reason-card-container">
+          <div class="reason-card">
+            <div class="card-front glass-panel">
+              <span class="card-number">05</span>
+              <i class="fa-solid fa-users-between-lines card-icon"></i>
+              <h4>Reason #5</h4>
+              <p class="flip-prompt">Click to flip ❤️</p>
+            </div>
+            <div class="card-back glass-panel">
+              <i class="fa-solid fa-heart"></i>
+              <p>"Your warm hugs that make me feel safe, happy, and right at home."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="reason-card-container">
+          <div class="reason-card">
+            <div class="card-front glass-panel">
+              <span class="card-number">06</span>
+              <i class="fa-solid fa-infinity card-icon"></i>
+              <h4>Reason #6</h4>
+              <p class="flip-prompt">Click to flip ❤️</p>
+            </div>
+            <div class="card-back glass-panel">
+              <i class="fa-solid fa-heart"></i>
+              <p>"Simply because you are YOU—my soulmate, my princess, and my whole world!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Romantic Gift Box & Love Coupons -->
+    <section class="gift-section section-padding">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-gift text-accent"></i> Romantic Surprise Box</h2>
+        <p class="section-desc">Click the ribbon to unwrap your special romantic birthday gifts & love coupons!</p>
+      </div>
+
+      <div class="gift-box-wrapper">
+        <div class="gift-box" id="giftBox">
+          <div class="gift-lid">
+            <div class="ribbon-bow">
+              <div></div><div></div>
+            </div>
+            <div class="ribbon-top"></div>
+          </div>
+          <div class="gift-body">
+            <div class="ribbon-vertical"></div>
+            <div class="ribbon-horizontal"></div>
+          </div>
+        </div>
+
+        <!-- Unwrapped Surprise Content Card with Video Player -->
+        <div class="surprise-card hidden" id="surpriseCard">
+          <div class="surprise-badge">🌹 UNLOCKED SURPRISE VIDEO 🌹</div>
+          <h3>Special Birthday Video For You 🎥💖</h3>
+          <p id="surpriseMessageText">
+            "A special video dedicated to the most amazing girl in the world!"
+          </p>
+          <div class="video-container-box">
+            <video id="surpriseVideoPlayer" controls poster="assets/photo1.jpg" class="custom-video-player">
+              <source src="assets/surprise_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-upload-bar">
+              <label for="surpriseVideoUploadInput" class="upload-btn small-upload-btn">
+                <i class="fa-solid fa-file-video"></i> Upload / Replace Surprise Video (.mp4)
+              </label>
+              <input type="file" id="surpriseVideoUploadInput" accept="video/*" style="display: none;">
+              <span class="upload-hint"><i class="fa-solid fa-info-circle"></i> Save video as <code>assets/surprise_video.mp4</code> or select it here!</span>
+            </div>
+          </div>
+          <div class="sender-signature">
+            With endless love & kisses, <br>
+            <strong id="senderNameDisplay2" class="gradient-text">Your Prince</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Romantic Memory Lane Polaroid Gallery -->
+    <section class="memory-section section-padding">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-camera-retro text-accent"></i> Our Romantic Memory Lane</h2>
+        <p class="section-desc">Our precious moments together! You can upload or replace photos anytime ❤️</p>
+      </div>
+
+      <div class="photo-controls">
+        <label for="photoUploadInput" class="upload-btn">
+          <i class="fa-solid fa-heart-circle-plus"></i> Add / Replace Photos
+        </label>
+        <input type="file" id="photoUploadInput" accept="image/*" multiple style="display: none;">
+        <span class="upload-hint"><i class="fa-solid fa-circle-info"></i> Click edit pencil or drag & drop photos to replace images!</span>
+      </div>
+
+      <div class="polaroid-grid" id="polaroidGrid">
+        <!-- Photo Frame 1 -->
+        <div class="polaroid-card" style="--rotation: -3deg;">
+          <div class="pin heart-pin"><i class="fa-solid fa-heart"></i></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/photo1.jpg" alt="Romantic Memory 1" class="polaroid-img" id="imgSlot1">
+            <button class="replace-slot-btn" onclick="triggerSlotUpload(1)" title="Change photo"><i class="fa-solid fa-pen"></i></button>
+          </div>
+          <p class="polaroid-caption" contenteditable="true" id="captionSlot1">Our Golden Moments 🌹</p>
+        </div>
+
+        <!-- Photo Frame 2 -->
+        <div class="polaroid-card" style="--rotation: 3deg;">
+          <div class="pin heart-pin"><i class="fa-solid fa-heart"></i></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/photo2.jpg" alt="Romantic Memory 2" class="polaroid-img" id="imgSlot2">
+            <button class="replace-slot-btn" onclick="triggerSlotUpload(2)" title="Change photo"><i class="fa-solid fa-pen"></i></button>
+          </div>
+          <p class="polaroid-caption" contenteditable="true" id="captionSlot2">Together Forever 💑</p>
+        </div>
+
+        <!-- Photo Frame 3 -->
+        <div class="polaroid-card" style="--rotation: -2deg;">
+          <div class="pin heart-pin"><i class="fa-solid fa-heart"></i></div>
+          <div class="polaroid-img-wrapper">
+            <div class="placeholder-photo-art" id="imgSlot3Holder">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Click to add photo</span>
+            </div>
+            <img src="" alt="Romantic Memory 3" class="polaroid-img hidden" id="imgSlot3">
+            <button class="replace-slot-btn" onclick="triggerSlotUpload(3)" title="Change photo"><i class="fa-solid fa-pen"></i></button>
+          </div>
+          <p class="polaroid-caption" contenteditable="true" id="captionSlot3">My Favorite Smile 💖</p>
+        </div>
+
+        <!-- Photo Frame 4 -->
+        <div class="polaroid-card" style="--rotation: 4deg;">
+          <div class="pin heart-pin"><i class="fa-solid fa-heart"></i></div>
+          <div class="polaroid-img-wrapper">
+            <div class="placeholder-photo-art" id="imgSlot4Holder">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Click to add photo</span>
+            </div>
+            <img src="" alt="Romantic Memory 4" class="polaroid-img hidden" id="imgSlot4">
+            <button class="replace-slot-btn" onclick="triggerSlotUpload(4)" title="Change photo"><i class="fa-solid fa-pen"></i></button>
+          </div>
+          <p class="polaroid-caption" contenteditable="true" id="captionSlot4">Best Birthday Ever! 🎉</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Romantic Card Builder & Exporter -->
+    <section class="card-builder-section section-padding">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-id-card text-accent"></i> Downloadable Romantic Card</h2>
+        <p class="section-desc">Generate a personalized visual romantic birthday card to keep forever!</p>
+      </div>
+
+      <div class="card-preview-container">
+        <div class="card-graphic glass-panel" id="downloadableCard">
+          <div class="card-graphic-bg"></div>
+          <div class="card-graphic-content">
+            <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3 class="card-heading">HAPPY BIRTHDAY MY LOVE</h3>
+            <h2 class="card-name" id="cardNamePreview">Vyshu</h2>
+            <div class="card-divider"></div>
+            <p class="card-message" id="cardMessagePreview">
+              "You are my happiness, my home, and my favorite person in the whole world. Happy Birthday my princess!"
+            </p>
+            <div class="card-footer">
+              <span id="cardSenderPreview">— Forever Yours, Your Prince</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button id="downloadCardBtn" class="primary-btn glow-effect">
+            <i class="fa-solid fa-download"></i> Download Romantic Card (.PNG)
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Crafted with endless ❤️ for <span id="footerName">Vyshu</span> | Happy Birthday My Princess!</p>
+  </footer>
+
+  <!-- Personalization Modal -->
+  <div class="modal-overlay hidden" id="personalizeModal">
+    <div class="modal-card glass-panel">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-sliders text-accent"></i> Customize Love Celebration</h3>
+        <button id="closeModalBtn" class="close-btn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="inputRecipientName">Girlfriend's Name / Nickname</label>
+          <input type="text" id="inputRecipientName" value="Vyshu" class="styled-input">
+        </div>
+
+        <div class="form-group">
+          <label for="inputMilestone">Tagline / Title</label>
+          <input type="text" id="inputMilestone" value="To My Beautiful Girlfriend & Best Friend Forever" class="styled-input">
+        </div>
+
+        <div class="form-group">
+          <label for="inputSenderName">Your Name / Nickname</label>
+          <input type="text" id="inputSenderName" value="Your Prince" class="styled-input">
+        </div>
+
+        <div class="form-group">
+          <label for="inputSurpriseMessage">Special Secret Love Letter Words</label>
+          <textarea id="inputSurpriseMessage" rows="3" class="styled-input">From the moment you entered my life, everything became brighter, sweeter, and infinitely more meaningful. Happy Birthday my princess!</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Romantic Theme Style</label>
+          <div class="theme-options">
+            <button class="theme-chip active" data-theme-val="romantic" style="background: linear-gradient(135deg, #e11d48, #ff7597);">
+              Velvet Red & Pink
+            </button>
+            <button class="theme-chip" data-theme-val="rose" style="background: linear-gradient(135deg, #be123c, #fb7185);">
+              Rose Blossom
+            </button>
+            <button class="theme-chip" data-theme-val="midnight" style="background: linear-gradient(135deg, #1e1035, #ec4899);">
+              Midnight Violet
+            </button>
+            <button class="theme-chip" data-theme-val="sunset" style="background: linear-gradient(135deg, #7c2d12, #fb923c);">
+              Warm Amber
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Shareable Customized Link</label>
+          <div class="copy-input-group">
+            <input type="text" id="shareUrlOutput" readonly class="styled-input">
+            <button id="copyShareUrlBtn" class="primary-btn"><i class="fa-solid fa-copy"></i> Copy Link</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="savePersonalizationBtn" class="primary-btn glow-effect">
+          <i class="fa-solid fa-check"></i> Apply & Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast hidden">
+    <i class="fa-solid fa-heart"></i>
+    <span id="toastMessage">Love celebration updated!</span>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="romantic">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Still Love Me? 🥺❤️ | My Cutie Piggy</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cutie-page">
+
+  <!-- Fireworks & Heart Canvas -->
+  <canvas id="fireworksCanvas"></canvas>
+  <div id="heartParticleContainer"></div>
+
+  <!-- Header Nav -->
+  <header class="navbar">
+    <a href="index.html" class="nav-btn secondary-btn" title="Back to Birthday Main Page">
+      <i class="fa-solid fa-arrow-left"></i> <span>Back to Celebration</span>
+    </a>
+    <div class="logo">
+      <span class="logo-text">My Cutie <span class="highlight">Piggy 🐷💖</span></span>
+    </div>
+    <div></div>
+  </header>
+
+  <!-- Main Game Container -->
+  <main class="cutie-main-container">
+    
+    <!-- Question Card Box -->
+    <div class="cutie-card glass-panel" id="questionCard">
+      
+      <!-- Cute Cat GIF Display -->
+      <div class="cat-gif-wrapper">
+        <img id="catGif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWtwcGlpeWtlczExdWptbXdkNmVldGNzY3l2a2xsZmxkdGlxZXlyMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9Ibxa0lGSzp0hXM/giphy.gif" alt="Cute Cat Pleading GIF" class="cat-gif">
+      </div>
+
+      <!-- Question Text Header -->
+      <h2 id="questionText" class="cutie-question">
+        Do you still love me? 🥺❤️
+      </h2>
+
+      <!-- Buttons Wrapper -->
+      <div class="game-buttons-wrapper" id="gameButtonsWrapper">
+        <button id="yesBtn" class="cutie-btn yes-btn glow-effect">
+          <i class="fa-solid fa-heart"></i> YES 💖
+        </button>
+
+        <button id="noBtn" class="cutie-btn no-btn">
+          NO 💔
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Celebration & Video Container (Initially Hidden) -->
+    <div class="cutie-card glass-panel hidden" id="videoSectionCard">
+      
+      <div class="celebration-badge">✨ YAYYY! I KNEW YOU LOVED ME! ✨</div>
+      
+      <h2 class="cutie-question gradient-text">
+        Our Special Video Moment 🎥💖
+      </h2>
+      <p class="section-desc">You can play our special video below or upload a new one anytime!</p>
+
+      <!-- Video Player Area -->
+      <div class="video-container-box">
+        <video id="ourVideoPlayer" controls poster="assets/photo1.jpg" class="custom-video-player">
+          <source src="assets/our_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+        <!-- Video Upload Input & Control -->
+        <div class="video-upload-bar">
+          <label for="videoUploadInput" class="upload-btn small-upload-btn">
+            <i class="fa-solid fa-file-video"></i> Upload / Replace Our Video (.mp4)
+          </label>
+          <input type="file" id="videoUploadInput" accept="video/*" style="display: none;">
+          <span class="upload-hint"><i class="fa-solid fa-info-circle"></i> Save your video as <code>assets/our_video.mp4</code> or select it here!</span>
+        </div>
+      </div>
+
+      <!-- I Love You Too Darling Button -->
+      <div class="email-action-wrapper">
+        <button id="sendLoveEmailBtn" class="primary-btn glow-effect giant-love-btn">
+          <i class="fa-solid fa-envelope-circle-check"></i> I Love You Too Darling 💖
+        </button>
+        <p class="email-hint"><i class="fa-solid fa-paper-plane"></i> Clicking sends an official "I Love You!" message directly to <strong>harshithrongala07@gmail.com</strong>!</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Fullscreen Pink YES Takeover Overlay (Initially Hidden) -->
+  <div id="fullScreenYesOverlay" class="fullscreen-yes-overlay hidden">
+    <div class="fullscreen-yes-content">
+      <h1 class="fullscreen-title">PLEASE SAY YESSSS! 🥺❤️</h1>
+      <p class="fullscreen-subtitle">I know you love me so much! Click the giant YES button below! 💖</p>
+      <button id="fullScreenYesBtn" class="giant-fullscreen-yes-btn glow-effect">
+        YES! I LOVE YOU FOREVER! 💖💖💖
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast hidden">
+    <i class="fa-solid fa-heart"></i>
+    <span id="toastMessage">Love message ready!</span>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="cutie.js"></script>
+</body>
+</html>
