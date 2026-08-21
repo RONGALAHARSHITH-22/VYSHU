@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, i * 200);
       }
     }
+    if (ourVideoPlayer) {
+      ourVideoPlayer.play().catch(() => {});
+    }
     showToast("🎉 YAYYY! I knew you loved me! 💖");
   }
 
